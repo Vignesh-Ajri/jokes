@@ -5,7 +5,8 @@ jokeBtn.addEventListener('click',fetchRandomJoke)
 
 async function fetchRandomJoke() {
     const url = `https://v2.jokeapi.dev/joke/Programming`;
-  
+
+    jokeEl.innerHTML = '<span>Loading...</span>';
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -24,7 +25,3 @@ async function fetchRandomJoke() {
       console.error('Failed to fetch the joke:', error);
     }
   }
-  
-  // Call the function
-  fetchRandomJoke();
-  
